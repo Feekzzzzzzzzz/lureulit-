@@ -1,0 +1,40 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Fishing object/Fish_species2.gd" type="Script" id=1]
+[ext_resource path="res://fish/3 Objects/Catch/3.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 126.473, 32.5359 )
+
+[sub_resource type="AtlasTexture" id=2]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 20, 12 )
+
+[sub_resource type="AtlasTexture" id=3]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 20, 0, 20, 12 )
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ SubResource( 2 ), SubResource( 3 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="Fish_species2" type="KinematicBody2D"]
+scale = Vector2( 0.933858, 0.780248 )
+script = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 106.012, 26.9145 )
+scale = Vector2( 1.04046, -1.24478 )
+shape = SubResource( 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( -13.4307, 21.0961 )
+scale = Vector2( 4.02013, 3.94323 )
+frames = SubResource( 4 )
+playing = true
